@@ -9,16 +9,16 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @EnableWebMvc
 @ComponentScan(basePackages = { "me.light" })
-public class ServiceConfig implements WebMvcConfigurer{
+public class ServiceConfig implements WebMvcConfigurer {
 
 	@Override
 	public void configureViewResolvers(ViewResolverRegistry registry) {
-		InternalResourceViewResolver viewResolver=new InternalResourceViewResolver();
+		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
 		viewResolver.setPrefix("/WEB-INF/views/");
 		viewResolver.setSuffix(".jsp");
 		registry.viewResolver(viewResolver);
 	}
-	
+
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
